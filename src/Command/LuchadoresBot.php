@@ -82,8 +82,7 @@ class LuchadoresBot extends Command
             if($twitterMediaId !== null) {
                 $number = count($luchadore['traits']) - 1;
                 $numberAttribute = $luchadore['traits'][$number]['value'];
-                dump($tokenId);
-                $textContent = 'Luchadores #' . $tokenId . ' with ';
+                $textContent = 'Luchador #' . $tokenId . ' with ';
                 if ($numberAttribute <= 1 ) {
                     $textContent .= $numberAttribute .' attribute' ;
                 } else {
@@ -91,7 +90,7 @@ class LuchadoresBot extends Command
                 }
                 $numberOfTokenSale = $sale["total_price"] /  pow(10, $sale["payment_token"]["decimals"]);
                 $sellerAdresse = $sale["seller"]["user"]["username"] !== null ? $sale["seller"]["user"]["username"] : substr($sale["seller"]["address"], 0, 8);
-                $buyerAdresse = $sale["winner_account"]["user"]["username"] !== null ? $sale["seller"]["user"]["username"] : substr($sale["winner_account"]["address"], 0, 8);
+                $buyerAdresse = $sale["winner_account"]["user"]["username"] !== null ? $sale["winner_account"]["user"]["username"] : substr($sale["winner_account"]["address"], 0, 8);
                 $usdPrice = $numberOfTokenSale * $sale["payment_token"]["usd_price"];
                 $textContent .= ' bought for ' . $numberOfTokenSale . ' ' . $sale["payment_token"]["symbol"] . '($'. $usdPrice . ') by ' . $buyerAdresse . ' from ' . $sellerAdresse . '.'. chr(13) . chr(10) . $luchadoreTokenUrl . $tokenId;
 
