@@ -1,6 +1,6 @@
-# Luchadores.io OpenSea Sales Twitter Bot
+# J48baforms.io OpenSea Sales Twitter Bot
 
-A bot that monitors Opensea sales for the Luchadores.io collection & then posts them to Twitter.
+A bot that monitors Opensea sales for the J48baforms.io collection & then posts them to Twitter.
 
 ## Donations
 
@@ -30,7 +30,6 @@ Complete the env.dist information :
 - **TWITTER_ACCESS_TOKEN_SECRET** - The Access Token Secret of the Twitter Account your bot is posting from
 - **TWITTER_USER_ID** - Your Twitter user id
 - **OPENSEA_API_KEY** - Your OpenSea Api Key
-- **LUCHADORES_IMAGE_URL** - The Luchadores distant image website
 
 - Then use the ```php bin/console bot:post``` to post the last sales
 

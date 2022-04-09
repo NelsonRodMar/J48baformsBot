@@ -60,7 +60,7 @@ class OpenSeaApiService
         if($response->getStatusCode() == 200){
             return $response->toArray()['asset_events'];
         } else {
-            return null;
+            throw new \ErrorException("Call to get all sales impossible");
         }
 
     }
@@ -98,7 +98,7 @@ class OpenSeaApiService
         if($response->getStatusCode() == 200){
             return $response->toArray();
         } else {
-            return null;
+            throw new \ErrorException("Call to get all data from OpenSea for #".$tokenId." impossible");
         }
     }
 }

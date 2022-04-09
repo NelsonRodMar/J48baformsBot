@@ -40,46 +40,19 @@ class TwitterApiService
         if ($connection->getLastHttpCode() == 200) {
             return true;
         } else {
-            return false;
-        }
-    }
-
-    /**
-     * Return the DateTime of the last tweet of the account
-     *
-     * @return \DateTime|null
-     * @throws \Exception
-     */
-    public function getLastTweetDateTime(): ?\DateTime
-    {
-        $consumerKey = $this->getParams->get('TWITTER_CONSUMER_KEY');
-        $consumerSecret = $this->getParams->get('TWITTER_CONSUMER_SECRET');
-        $accesToken = $this->getParams->get('TWITTER_ACCESS_TOKEN');
-        $accesTokenSecret = $this->getParams->get('TWITTER_ACCESS_TOKEN_SECRET');
-        $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accesToken, $accesTokenSecret);
-        $userId = $this->getParams->get('TWITTER_USER_ID');
-
-        $result = $connection->get("statuses/user_timeline", [
-            "user_id" => $userId,
-            "count" => 1,
-        ]);
-
-        if ($connection->getLastHttpCode() == 200) {
-            return new \DateTime($result[0]->created_at);
-        } else {
-            return null;
+            throw new \ErrorException("Impossible to post new tweet");
         }
     }
 
     /**
      * Upload image on Twitter
      *
-     * @param string $imagePath the path of the picture
+     * @param string $imageUrl the url of the picture
      *
      * @return string|null return Twitter media URL
      * @throws \Exception
      */
-    public function postUploadImage(string $imagePath): ?string
+    public function postUploadImage(string $imageUrl): ?string
     {
         $consumerKey = $this->getParams->get('TWITTER_CONSUMER_KEY');
         $consumerSecret = $this->getParams->get('TWITTER_CONSUMER_SECRET');
@@ -88,14 +61,13 @@ class TwitterApiService
         $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accesToken, $accesTokenSecret);
 
         $result = $connection->upload("media/upload", [
-            "media" => $imagePath,
+            "media" => $imageUrl,
         ]);
-
 
         if ($connection->getLastHttpCode() == 200) {
             return $result->media_id_string;
         } else {
-            return null;
+            throw new \ErrorException("Impossible to upload image on Twitter");
         }
     }
 }

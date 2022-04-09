@@ -10,11 +10,11 @@ parameters:
     TWITTER_ACCESS_TOKEN_SECRET: '%env(TWITTER_ACCESS_TOKEN_SECRET)%'
     TWITTER_USER_ID: '%env(TWITTER_USER_ID)%'
     OPENSEA_API_KEY: '%env(OPENSEA_API_KEY)%'
-    LUCHADORES_IMAGE_URL: '%env(LUCHADORES_IMAGE_URL)%'
-    LUCHADORES_TOKEN_URL: 'https://luchadores.io/luchador/'
-    LUCHADORES_IMAGE_FOLDER: 'luchadores-pictures'
-    LUCHADORES_IMAGE_EXTENSION: 'png'
-    LUCHADORES_CONTRACT_ADRESS: '0x8b4616926705fb61e9c4eeac07cd946a5d4b0760'
+    J48BAFORMS_IMAGE_URL: '%env(J48BAFORMS_IMAGE_URL)%'
+    OPENSEA_ASSETS_URL: 'https://opensea.io/assets'
+    J48BAFORMS_IMAGE_FOLDER: 'j48baforms-pictures'
+    J48BAFORMS_IMAGE_EXTENSION: 'png'
+    J48BAFORMS_CONTRACT_ADRESS: '0xc78337ccbb2d08492ec152e501491d3a76cd5172'
 
 services:
     # default configuration for services in *this* file
