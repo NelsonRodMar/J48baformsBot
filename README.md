@@ -1,6 +1,6 @@
-# Goblinis.xyz OpenSea Sales Twitter Bot
+# J48baforms.io OpenSea Sales Twitter Bot
 
-A bot that monitors Opensea sales for the Goblinis.xyz collection & then posts them to Twitter.
+A bot that monitors Opensea sales for the J48baforms.io collection & then posts them to Twitter.
 
 ## Donations
 
